@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background: blue;
+  background: linear-gradient(to bottom, #000000, #2c0c56, #9b6dd6);
+
+  /* background: linear-gradient(to bottom, #ff7e5f, #feb47b); */
+
+  /* Ensure the gradient covers the full body height */
+  height: 100vh;
+  margin: 0;
 }
