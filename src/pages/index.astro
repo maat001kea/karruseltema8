@@ -1,13 +1,18 @@
 ---
-
-// const data = await fetch("").then((response) => response.json());
-// console.log(data);
 import "../style/style.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Signup from "../components/Signup.astro";
-import { image } from "astro:assets";
+/**import { image } from "astro:assets";**/
 
+const data = await fetch("https://xvhywspcmauhtujngvxo.supabase.co/rest/v1/karrusel", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aHl3c3BjbWF1aHR1am5ndnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzNjAsImV4cCI6MjA0NDIxMTM2MH0.daY1Mqa8fpBee5AnKA9LHK0cDe0ZAePutP8grr5OXDk",
+  },
+}).then((res) => res.json());
+
+console.log(data);
 ---
 
 <html lang="en">
@@ -18,54 +23,47 @@ import { image } from "astro:assets";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
- 
+
   <body>
-	<header>
-    <Header />
-</header>
-	<main>
-   <div class="hero">
-    <img src="./images/heroindex.webp" alt="karruselMedBlur" height="100%" width="100%"
->
-    <h1>KARRUSEL FESTIVAL</h1>
-  </div>
+    <header>
+      <Header />
+    </header>
+    <main>
+      <div class="hero">
+        <img src="./images/heroindex.webp" alt="karruselMedBlur" height="100%" width="100%" />
+        <h1>KARRUSEL FESTIVAL</h1>
+      </div>
 
-  <div class="grid_1_1" >
-	<div><h2>WELCOME TO KARRUSEL FESTIVAL</h2>
-  <p>3 days of house, disco and techno in the woods. Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. <br>
-</br>Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.</p></div>
-	<div><img src="./images/billet.webp" alt="billet"></div>
-</div>
+      <div class="grid_1_1">
+        <div>
+          <h2>WELCOME TO KARRUSEL FESTIVAL</h2>
+          <p>3 days of house, disco and techno in the woods. Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. <br /></p>Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.
+        </div>
+      </div>
+      <div><img src="./images/billet.webp" alt="billet" /></div>
+    </main>
 
-
-
-  <Signup />
-
-</main>
-<footer>
-    <Footer />
-	</footer>
+    <Signup />
   </body>
-
-  <style>
-	.hero {
-  position: relative;
-}
-
-.hero h1 {
-  position: absolute;
-  top: 50%;
-  align-items: center;
-}
-.grid_1_1{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin: 45px;
-	gap: 30px;
-}
-
-
-  </style>
-
+  <footer>
+    <Footer />
+  </footer>
 </html>
 
+<style>
+  .hero {
+    position: relative;
+  }
+
+  .hero h1 {
+    position: absolute;
+    top: 50%;
+    align-items: center;
+  }
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 45px;
+    gap: 30px;
+  }
+</style>
