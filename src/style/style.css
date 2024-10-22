@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -43,4 +43,5 @@ p {
   color: var(--primary-color);
   font-size: var(--fontsizep);
   line-height: var(--lineHeight);
+  max-width: 65ch;
 }

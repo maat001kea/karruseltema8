@@ -1,9 +1,9 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
-<footer>
-  <section>
+<footer >
+  <section class="grid_4 footer">
     <div>
       <p>Address</p>
       <p>Refshalevej 193, 1432</p>
@@ -14,7 +14,34 @@
       <p>Contact: info@nusnus.dk</p>
       <p>Karrusel is organized by Nus Nus</p>
     </div>
+    <div> 
+        <img
+        src="./images/instagram.png"
+        alt="instagram billede logo"
+        width="20px"
+        height="20px"
+        />
+
+        <img
+        src="./images/facebook.png"
+        alt="instagram billede logo"
+        width="20px"
+        height="20px"
+        />
+    </div>
+
   </section>
 
-  <div></div>
+  <style>
+.grid_4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+    
+.footer{
+    position: fixed;
+   left: 5px;
+   bottom: 0;
+}
+  </style>  
 </footer>
