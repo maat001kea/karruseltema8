@@ -25,11 +25,22 @@ import { image } from "astro:assets";
 </header>
 	<main>
    <div class="hero">
-    <img src="./images/heroindex.webp" alt="karruselMedBlur">
+    <img src="./images/heroindex.webp" alt="karruselMedBlur" height="100%" width="100%"
+>
     <h1>KARRUSEL FESTIVAL</h1>
   </div>
 
-    <Signup />
+  <div class="grid_1_1" >
+	<div><h2>WELCOME TO KARRUSEL FESTIVAL</h2>
+  <p>3 days of house, disco and techno in the woods. Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. <br>
+</br>Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.</p></div>
+	<div><img src="./images/billet.webp" alt="billet"></div>
+</div>
+
+
+
+  <Signup />
+
 </main>
 <footer>
     <Footer />
@@ -37,7 +48,23 @@ import { image } from "astro:assets";
   </body>
 
   <style>
-	
+	.hero {
+  position: relative;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 50%;
+  align-items: center;
+}
+.grid_1_1{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 45px;
+	gap: 30px;
+}
+
+
   </style>
 
 </html>
