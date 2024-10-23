@@ -20,10 +20,10 @@ import { image } from "astro:assets";
   </head>
  
   <body>
-	<header>
+
     <Header />
-</header>
-	<main>
+    <main>
+
    <div class="hero">
     <img src="./images/heroindex.webp" alt="karruselMedBlur" height="100%" width="100%"
 >
@@ -42,9 +42,9 @@ import { image } from "astro:assets";
   <Signup />
 
 </main>
-<footer>
+
     <Footer />
-	</footer>
+
   </body>
 
   <style>
@@ -54,8 +54,9 @@ import { image } from "astro:assets";
 
 .hero h1 {
   position: absolute;
-  top: 50%;
-  align-items: center;
+  top: 60%;
+  left: 5%;
+  /* transform: translate(-50%, -50%); */
 }
 .grid_1_1{
 	display: grid;
