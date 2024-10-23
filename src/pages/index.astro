@@ -37,6 +37,25 @@ import { image } from "astro:assets";
 	<div><img src="./images/billet.webp" alt="billet"></div>
 </div>
 
+<div class="h2_moments">
+<h2  >MOMENTS TO REMEBER</h2>
+<p> <br>Highlighting the unforgettable moment of the festival</p> </div>
+<div>
+	<img src="./images/karrusel.webp" alt="karrusel">
+</div>
+
+<div class="grid_2_1">
+  <div class="image-container">
+    <img src="/images/lineupoverview.webp" alt="billet">
+  </div>
+  <div class="text-container">
+    <h2>LINE UP OVERVIEW</h2>
+    <p>
+      <br>Find out who’s performing at Karrusel Festival.<br><br>
+      Get ready for 3 days of house, disco and techno in the woods with some amazing acts.
+    </p>
+  </div>
+</div>
 
 
   <Signup />
@@ -65,6 +84,19 @@ import { image } from "astro:assets";
 	gap: 30px;
 }
 
+.h2_moments{
+	margin: 45px;
+	gap: 30px;
+}
+.grid_2_1{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 45px;
+	gap: 30px;
+	border: 2px solid #6E2880; 
+	padding: 20px;
+	background-color: #6E2880;
+}
 
   </style>
 
