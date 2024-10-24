@@ -1,0 +1,25 @@
+---
+export async function getStaticPaths() {
+  const artists = await fetch (
+    "https://xvhywspcmauhtujngvxo.supabase.co/rest/v1/karrusel",
+  {
+    headers: {
+      apikey:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aHl3c3BjbWF1aHR1am5ndnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzNjAsImV4cCI6MjA0NDIxMTM2MH0.daY1Mqa8fpBee5AnKA9LHK0cDe0ZAePutP8grr5OXDk",
+    },
+  }
+).then((res) => res.json());
+
+return artists.map((artist) => ({
+      params: { artist: artist.slug }, // [artist]=artist.slug
+      props: { artist }, // send al data med som props
+    }))
+}
+
+const { artist } = Astro.props;
+console.log(artist) 
+  
+  
+---
+<h1>{artist.titel}</h1>
+
