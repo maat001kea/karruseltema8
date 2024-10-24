@@ -1,8 +1,8 @@
 ---
+import "../style/style.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Signup from "../components/Signup.astro";
-import "../style/style.css";
 import Singleview from "../components/Singleview.astro";
 ---
 
@@ -20,71 +20,29 @@ import Singleview from "../components/Singleview.astro";
       <img src="public/icon/rewind.svg" alt="Go back" />
       <p>GO BACK</p>
     </div>
+
     <style>
       .go_back {
         display: flex;
         align-items: center;
         gap: 6px;
       }
-
       .go_back img {
         width: 20px;
         height: auto;
       }
-
       .go_back p {
         margin: 0;
         font-size: 1.1rem;
         color: white;
       }
     </style>
+
     <Singleview
       title="ANETHA"
       imageSrc="/public/images/anetha_single.webp"
       description="Born in 1989 in Bordeaux, Anetha has been mixing since the age of 16, introduced to techno music by her father, a Kraftwerk fan and amateur DJ. Without classical musical training, she graduated in architecture. She began her career as a professional DJ in 2013, during a stay of a few months in London where she mixed in clubs such as Corsica Studios. She recorded her first sessions there in the studio of her roommates, sound engineers. Back in France, she set up her own studio in her Parisian apartment."
     />
-    <div class="play_container">
-      <button class="control-button1">
-        <img src="public/icon/arrow-left-circle.svg" alt="Previous" />
-      </button>
-      <button class="control-button2">
-        <img src="public/icon/play.svg" alt="Play" />
-      </button>
-      <button class="control-button3">
-        <img src="public/icon/arrow-right-circle.svg" alt="Next" />
-      </button>
-    </div>
-
-    <!-- CSS STLYLE START -->
-    <style>
-      .play_container {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 8px;
-        border: 3px solid #9ad328;
-        background-color: #6f5f8a;
-        border-radius: 10px;
-        max-width: 300px;
-        margin: 15px;
-      }
-
-      .control-button1,
-      .control-button2,
-      .control-button3 {
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-
-      .control-button1 img,
-      .control-button2 img,
-      .control-button3 img {
-        width: 30px;
-        height: auto;
-      }
-    </style>
-    <!-- CSS STLYLE SLUT -->
-
     <Signup />
     <Footer />
   </body>

@@ -11,10 +11,17 @@ const { title, date, imageSrc, description } = Astro.props;
     <h3>{title}</h3>
     <p>{description}</p>
 
-    <div class="buy_ticket_button">
-      <button class="buy_ticket_button">Buy Ticket</button>
+    <div class="play_container">
+      <button class="control-button1">
+        <img src="public/icon/arrow-left-circle.svg" alt="Previous" />
+      </button>
+      <button class="control-button2">
+        <img src="public/icon/play.svg" alt="Play" />
+      </button>
+      <button class="control-button3">
+        <img src="public/icon/arrow-right-circle.svg" alt="Next" />
+      </button>
     </div>
-
     <div class="icon-container">
       <img src="/public/icon/heart.svg" alt="Favorite" />
       <img src="/public/icon/music.svg" alt="Music" />
@@ -22,8 +29,32 @@ const { title, date, imageSrc, description } = Astro.props;
   </div>
 </div>
 
-<!-- CSS STYLE START -->
+<!-- CSS STLYLE START -->
 <style>
+  .play_container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+    border: 3px solid #9ad328;
+    background-color: #6f5f8a;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 15px;
+  }
+  .control-button1,
+  .control-button2,
+  .control-button3 {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .control-button1 img,
+  .control-button2 img,
+  .control-button3 img {
+    width: 30px;
+    height: auto;
+  }
   .artist_card {
     display: flex;
     color: white;
