@@ -14,7 +14,7 @@ import { Image } from "astro:assets";
       <p>Contact: info@nusnus.dk</p>
       <p>Karrusel is organized by Nus Nus</p>
     </div>
-    <div> 
+    <div class="bottomright"> 
         <img
         src="./images/instagram.png"
         alt="instagram billede logo"
@@ -36,11 +36,20 @@ import { Image } from "astro:assets";
 .grid_4 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+
 }
     
 .footer{
    left: 5px;
    bottom: 0;
+}
+
+.bottomright{
+  position: relative;
+  bottom: 8px;
+  right: 16px;
+}
 }
   </style>  
 </footer>
