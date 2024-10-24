@@ -1,7 +1,9 @@
 ---
+import Artist from "../components/Artist.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Signup from "../components/Signup.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import "../style/style.css";
 ---
 
@@ -14,9 +16,22 @@ import "../style/style.css";
     <title>Liste</title>
   </head>
   <body>
-    <Header />
-    <h1>Astro</h1>
-    <Signup />
-    <Footer />
+    <MainLayout tittle="Hjem">
+     <Header />
+      <Signup />
+      <Footer /> 
+      <section class="artist">
+        {
+          data.map((artist) => {
+            return <Artist data={artist} />;
+          })
+        }
+      </section>
+      
+     
+    
+    </MainLayout> 
+      
+    
   </body>
 </html>

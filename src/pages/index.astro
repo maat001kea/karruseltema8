@@ -7,22 +7,18 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 
 
-const data =await fetch(
-  "https://xvhywspcmauhtujngvxo.supabase.co/rest/v1/karrusel",
-{
-method: "GET",
-headers: {
-  apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aHl3c3BjbWF1aHR1am5ndnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzNjAsImV4cCI6MjA0NDIxMTM2MH0.daY1Mqa8fpBee5AnKA9LHK0cDe0ZAePutP8grr5OXDk"
-},
-}
-).then((res)=> res.json());
-console.log(data);
-
 
 ---
 <MainLayout tittle="Hjem">
+<<<<<<< HEAD
   <Header /> 
    <Signup />
+=======
+  <Header />
+  <Signup />
+  <Footer />
+
+>>>>>>> mahmoudaa
 </MainLayout>
 
    
