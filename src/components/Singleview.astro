@@ -11,10 +11,17 @@ const { title, date, imageSrc, description } = Astro.props;
     <h3>{title}</h3>
     <p>{description}</p>
 
-    <div class="buy_ticket_button">
-      <button class="buy_ticket_button">Buy Ticket</button>
+    <div class="play_container">
+      <button class="control-button1">
+        <img src="public/icon/arrow-left-circle.svg" alt="Previous" />
+      </button>
+      <button class="control-button2">
+        <img src="public/icon/play.svg" alt="Play" />
+      </button>
+      <button class="control-button3">
+        <img src="public/icon/arrow-right-circle.svg" alt="Next" />
+      </button>
     </div>
-
     <div class="icon-container">
       <img src="/public/icon/heart.svg" alt="Favorite" />
       <img src="/public/icon/music.svg" alt="Music" />
@@ -22,10 +29,34 @@ const { title, date, imageSrc, description } = Astro.props;
   </div>
 </div>
 
-<!-- CSS STYLE START -->
 <style>
-  .artist_card {
+  .play_container {
     display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+    border: 3px solid #9ad328;
+    background-color: #6f5f8a;
+    border-radius: 10px;
+    max-width: 300px;
+    margin-top: 1%;
+  }
+  .control-button1,
+  .control-button2,
+  .control-button3 {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .control-button1 img,
+  .control-button2 img,
+  .control-button3 img {
+    width: 30px;
+    height: auto;
+  }
+  .artist_card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     color: white;
     padding: 20px;
     max-width: 1000px;
@@ -37,27 +68,9 @@ const { title, date, imageSrc, description } = Astro.props;
   }
 
   .artist_container {
-    flex: 2;
-    padding-left: 20px;
-  }
-
-  .buy_ticket_button {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-
-  .buy_ticket_button button {
-    background-color: #f0ff00;
-    color: #000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .buy_ticket_button button:hover {
-    background-color: #d8e200;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 400%;
   }
 
   .icon-container {
@@ -73,5 +86,3 @@ const { title, date, imageSrc, description } = Astro.props;
     cursor: pointer;
   }
 </style>
-
-<!-- CSS STYLE SLUT -->

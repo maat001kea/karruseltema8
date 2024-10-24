@@ -1,0 +1,10 @@
+---
+const { artist } = Astro.props;
+--- 
+
+<a href={`/artist/${artist.slug}`}>
+<li>
+    <h3>{artist.title}</h3>
+    <img src={`/img/${artist.image}`} alt={artist.title}/>
+</li>
+</a>

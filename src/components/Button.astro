@@ -1,3 +1,37 @@
 ---
 
 ---
+
+<button class="hover-button" on:click={handleClick}> klik
+</button>
+
+<style>
+.hover-button {
+  padding: 12px 24px;
+  background-color: #C9CEF4;
+  color: #7D205D;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-button:hover {
+  background-color: #C9CEF4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hover-button:active {
+  background-color: #C276C7;
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
+
+<script>
+  function handleClick() {
+    alert('Knap klikket!');
+  }
+</script>
