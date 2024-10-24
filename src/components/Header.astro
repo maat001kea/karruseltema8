@@ -1,38 +1,161 @@
 ---
-import { Image } from "astro:assets";
+import "../style/style.css";
 ---
-<div class="navbar">
-    <img
-  src="./icon/menu.svg"
-  alt="karrusel billede logo"
-  width="136px"
-  height="86px"
-  />
 
-  <p class="datomidten">28.-30. August 2025</p>
+<header class="navbar">
+  <img src="/icon/menu.svg" alt="Karrusel Festival Logo" class="navbar-logo" width="136" height="86" />
 
-<p>Burgermenu vises her</p>
+  <!-- Centreret datotekst -->
+  <p class="navbar-date">28.-30. August 2025</p>
 
-</div>
+  <!-- Hamburger Menu-knap -->
+  <button class="menu-toggle" aria-label="Åbn menu">
+    <!-- Hamburger menu (tre linjer) -->
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
+  <!-- Dropdown-menu -->
+  <nav class="dropdown-menu">
+    <ul class="menu-items">
+      <li><a href="index">Foside</a></li>
+      <li><a href="liste">Kategori</a></li>
+      <li><a href="about">Om Karussel</a></li>
+      <li><a href="single">Billetter</a></li>
+      <li><a href="kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
 
 <style>
-  
-.navbar{
-    overflow: hidden;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
     background-color: rgba(255, 255, 255, 0.108);
     position: fixed;
-    /* position: -webkit-sticky; */
     top: 0;
-    display: flex;
-    text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Sløreffekt for hele navbar */
   }
 
-.datomidten{
-margin-right: 30%;
-margin-left: 30%;
+  .navbar-logo {
+    max-width: 136px;
+    max-height: 86px;
   }
-  
-    </style>
+
+  /* Centreret datotekst styling */
+  .navbar-date {
+    flex-grow: 1; /* Fylder det resterende rum */
+    text-align: center;
+    color: var(--primary-color); /* Juster farve efter behov */
+    font-family: var(--font-family-header); /* Brug den foruddefinerede skrifttype */
+    font-size: 1.2rem; /* Juster størrelsen efter behov */
+  }
+
+  /* Hamburger menu-knap styling */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle .bar {
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: 0.3s ease;
+  }
+
+  /* Dropdown-menu styling */
+  .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Gennemsigtig hvid baggrund */
+    backdrop-filter: blur(10px); /* Sløreffekt */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  .menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu-items li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-items a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--fontsizep);
+    font-family: var(--fontfamily-caption);
+    transition: color 0.3s ease;
+  }
+
+  .menu-items a:hover {
+    color: var(--warning-color);
+  }
+
+  /* Vis dropdown når menuen er aktiv */
+  .menu-active .dropdown-menu {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Responsiv styling */
+  @media (max-width: 768px) {
+    .menu-items {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  function toggleMenu(event) {
+    event.stopPropagation(); // Forhindrer, at menuen lukkes, når man klikker på knappen
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("menu-active");
+  }
+
+  function closeMenuIfClickedOutside(event) {
+    const navbar = document.querySelector(".navbar");
+    const isClickInsideNavbar = navbar.contains(event.target);
+
+    if (!isClickInsideNavbar) {
+      navbar.classList.remove("menu-active");
+    }
+  }
+
+  function initializeMenu() {
+    const menuToggle = document.querySelector(".menu-toggle");
+
+    // Tilføj event listener for menu-knap
+    menuToggle.addEventListener("click", toggleMenu);
+
+    // Tilføj event listener for at lukke menuen, når der klikkes udenfor
+    document.addEventListener("click", closeMenuIfClickedOutside);
+  }
+
+  // Sørg for, at DOM'en er indlæst, før scriptet kører
+  document.addEventListener("DOMContentLoaded", initializeMenu);
+</script>
