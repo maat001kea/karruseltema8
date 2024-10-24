@@ -1,0 +1,77 @@
+---
+const { title, date, imageSrc, description } = Astro.props;
+---
+
+<div class="artist_card">
+  <div class="artist_image">
+    <img src={imageSrc} alt={title} />
+  </div>
+
+  <div class="artist_container">
+    <h3>{title}</h3>
+    <p>{description}</p>
+
+    <div class="buy_ticket_button">
+      <button class="buy_ticket_button">Buy Ticket</button>
+    </div>
+
+    <div class="icon-container">
+      <img src="/public/icon/heart.svg" alt="Favorite" />
+      <img src="/public/icon/music.svg" alt="Music" />
+    </div>
+  </div>
+</div>
+
+<!-- CSS STYLE START -->
+<style>
+  .artist_card {
+    display: flex;
+    color: white;
+    padding: 20px;
+    max-width: 1000px;
+  }
+
+  .artist_image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .artist_container {
+    flex: 2;
+    padding-left: 20px;
+  }
+
+  .buy_ticket_button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  .buy_ticket_button button {
+    background-color: #f0ff00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .buy_ticket_button button:hover {
+    background-color: #d8e200;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .icon-container img {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+  }
+</style>
+
+<!-- CSS STYLE SLUT -->

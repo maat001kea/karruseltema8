@@ -1,13 +1,16 @@
 * {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   box-sizing: border-box;
 }
+@import url("https://fonts.googleapis.com/css2?family=Afacad&display=swap");
 
 body {
   background: linear-gradient(to bottom, #000000, #2c0c56, #9b6dd6);
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
+  margin: 0px;
+  font-family: "Afacad", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 :root {
@@ -16,17 +19,29 @@ body {
   --waring-color: #9ad328;
 
   /*font_family*/
-  --font-family: ;
+  --font-family-header: "Afacad", sans-serif;
+  --fontsizeH1: 120px;
+  --fontsizeH2: 40px;
+
+  --fontfamily-caption: "Helvetica", sans-serif;
+  --fontsizep: 18px;
 
   /*others*/
+  --lineHeight: 35px;
 }
 
-h1,
-h3,
-p {
+h1 {
   color: var(--primary-color);
+  font-size: var(--fontsizeH1);
 }
 
 h2 {
   color: var(--waring-color);
+  font-size: var(--fontsizeH2);
+}
+p {
+  color: var(--primary-color);
+  font-size: var(--fontsizep);
+  line-height: var(--lineHeight);
+  max-width: 65ch;
 }

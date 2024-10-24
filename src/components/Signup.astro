@@ -1,16 +1,72 @@
 ---
 
 ---
-
+<div class="signupcard">
 <h3>STAY IN THE LOOP - SIGN UP FOR NEWSLETTER</h3>
 <p>Get news and exclusive updates straight to your inbox</p>
 
 <div>
   <form>
+    <div>
     <label>Name:</label>
+</div>
     <input type="text" id="name" name="name" value="" />
+    <div>
     <label>E-mail:</label>
+</div>
+
     <input type="text" id="email" name="email" value="" />
+    <div>
+
     <input type="submit" value="SIGN UP" />
+</div>
+
   </form>
 </div>
+</div>
+
+
+
+<style>
+    h3{
+        color: white;
+        margin-bottom: 5%;
+    }
+    
+
+    form{
+        text-align: center;
+        /* P i den konstante ødelægger den for mig. Det er dens max width der ødelægger det */
+        color: white ;
+    }
+    input[type=text]{
+        width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    input[type=submit]{
+        margin-top:1%;
+        padding: 12px 20px;
+        color: rgba(125, 32, 93, 1);
+        background-color: rgba(201, 206, 244, 1);
+        border: none;
+        border-radius: 8px;
+
+    }
+
+  
+
+
+    .signupcard{
+        text-align: center;
+        margin-top:10%;
+        margin-bottom: 10%;
+    }
+
+
+</style>
