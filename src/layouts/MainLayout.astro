@@ -1,0 +1,132 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Signup from "../components/Signup.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Karrusel Festival</title>
+  </head>
+ 
+  <body>
+
+    <!-- Header with burger menu -->
+    <Header />
+
+    <main>
+      <!-- Hero Section -->
+      <div class="hero">
+        <img src="./images/heroindex.webp" alt="Karrusel Festival" height="100%" width="100%" />
+        <h1>KARRUSEL FESTIVAL</h1>
+      </div>
+
+      <!-- Welcome Section -->
+      <div class="grid_1_1">
+        <div>
+          <h2>WELCOME TO KARRUSEL FESTIVAL</h2>
+          <p>
+            3 days of house, disco and techno in the woods. Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. 
+            <br />
+            <br />
+            Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others' boundaries, embraces diversity, and acts as a part of the community.
+          </p>
+        </div>
+        <div>
+          <img src="./images/billet.webp" alt="billet" />
+        </div>
+      </div>
+
+      <!-- Moments Section -->
+      <div class="h2_moments">
+        <h2>MOMENTS TO REMEMBER</h2>
+        <p>Highlighting the unforgettable moments of the festival</p>
+      </div>
+      <div>
+        <img src="./images/karrusel.webp" alt="karrusel" />
+      </div>
+
+      <!-- Line-Up Overview Section -->
+      <div class="grid_2_1">
+        <div class="image-container">
+          <img src="/images/lineupoverview.webp" alt="lineup overview" />
+        </div>
+        <div class="text-container">
+          <h2>LINE UP OVERVIEW</h2>
+          <p>
+            Find out who’s performing at Karrusel Festival. Get ready for 3 days of house, disco, and techno in the woods with some amazing acts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Signup Section -->
+      <Signup />
+
+    </main>
+
+    <!-- Footer -->
+
+        <Footer />
+
+  </body>
+  <style>
+
+    /* Hero Section Styling */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      position: absolute;
+      top: 60%;
+      left: 5%;
+      font-size: 3rem;
+      color: white;
+    }
+
+    /* Grid 1: Welcome Section */
+    .grid_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 45px;
+      gap: 30px;
+    }
+
+    /* Moments Section */
+    .h2_moments {
+      margin: 45px;
+      text-align: center;
+    }
+
+    /* Grid 2: Line-Up Section */
+    .grid_2_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 45px;
+      gap: 30px;
+      border: 2px solid #6E2880;
+      padding: 20px;
+      background-color: #6E2880;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .grid_1_1, .grid_2_1 {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        top: 50%;
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+
+</html>
