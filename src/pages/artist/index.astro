@@ -11,15 +11,28 @@ headers:{
 ).then((res) => res.json());
 
 import Acard from "../../components/Acard.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-console.log(artists);
----
+import Layout from "../../layouts/Layout.astro";
+import "../../style/style.css";
 
+// import MainLayout from "../../layouts/MainLayout.astro";
+// console.log(artists);
+
+---
 <layout>
-    <ul>
-        {artists.map((artist) => <Acard artist={artist} />)}
-    </ul>
+  <ul>
+    <h3>hej</h3>
+      {artists.map((artist) => <Acard artist={artist} />)}
+      <!-- {artists.map((artist) => <Layout artist={artist} />)} -->
+  </ul>
 </layout>
+
+<Layout>
+    <!-- <ul>
+        {artists.map((artist) => <Acard artist={artist} />)} -->
+        <!-- {artists.map((artist) => <Layout artist={artist} />)} -->
+    <!-- </ul> -->
   
+
+
 
 

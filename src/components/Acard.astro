@@ -1,10 +1,26 @@
 ---
 const { artist } = Astro.props;
+import Button from "./Button.astro";
 --- 
 
 <a href={`/artist/${artist.slug}`}>
-<li>
-    <h3>{artist.title}</h3>
-    <img src={`/img/${artist.image}`} alt={artist.title}/>
+<ul class="grid_2">
+    <li>
+        <img src={`/images/${artist.img}`} alt={artist.title}/>
 </li>
+<li>
+    <h3>{artist.titel}</h3>
+    <p>{artist.description}</p>
+    <Button variant="tertiary">READ MORE</Button>
+    <Button variant="tertiary">BUY TICKET</Button>
+</li>
+</ul>
 </a>
+
+<style>
+.grid_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+</style>
