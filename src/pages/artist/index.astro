@@ -15,12 +15,11 @@ import Layout from "../../layouts/Layout.astro";
 import "../../style/style.css";
 
 // import MainLayout from "../../layouts/MainLayout.astro";
-// console.log(artists);
+console.log(artists);
 
 ---
 <layout>
   <ul>
-    <h3>hej</h3>
       {artists.map((artist) => <Acard artist={artist} />)}
       <!-- {artists.map((artist) => <Layout artist={artist} />)} -->
   </ul>
